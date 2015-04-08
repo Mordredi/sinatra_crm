@@ -2,5 +2,8 @@
 <p><%= @contact.email %></P>
 <p><%= @contact.notes %></p>
 <a href="/contacts/edit/<%= @contact.id %>">Edit Contact</a><br>
-<a href="/contacts/delete/<%= @contact.id %>">Delete Contact</a><br>
+<form action="/contacts" method="post">
+  <input type="hidden" name="_method" value="delete" />
+  <input type="submit" name="Delete" value="Delete">
+</form>
 <a href="/">Home</a>
