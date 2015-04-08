@@ -1,0 +1,6 @@
+<h1><%= @contact.first_name %> <%= @contact.last_name %></h1>
+<p><%= @contact.email %></P>
+<p><%= @contact.notes %></p>
+<a href="/contacts/edit/<%= @contact.id %>">Edit Contact</a><br>
+<a href="/contacts/delete/<%= @contact.id %>">Delete Contact</a><br>
+<a href="/">Home</a>

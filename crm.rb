@@ -17,6 +17,20 @@ get '/contacts/new' do
   erb :add_contact
 end
 
+get '/contacts/:id' do
+  @id = params['id'].to_i
+  @contact = $rolodex.find(@id)
+  puts @contact
+  erb :contact
+end
+
+get '/contacts/edit/:id' do
+  @id = params['id'].to_i
+  @contact = $rolodex.find(@id)
+  puts @contact
+  erb :edit
+end
+
 post '/contacts' do
   new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:notes])
   $rolodex.add_contact(new_contact)
