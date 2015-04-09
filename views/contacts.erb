@@ -1,9 +1,13 @@
-<h1>Contacts</h1>
-
-<ul>
-  <% $rolodex.contacts.each do |contact| %>
-    <li><a href="/contacts/<%= contact.id %>"><%= contact.first_name %> <%= contact.last_name %></a></li>
-  <% end %>
-</ul>
-
-<a href="/">Return to main menu</a>
+<div class="col-left">
+  <h1>Contacts</h1>
+  <ul class="contacts">
+    <% $rolodex.contacts.each do |contact| %>
+      <li><a href="/contacts/<%= contact.id %>"><%= contact.first_name %> <%= contact.last_name %></a></li>
+    <% end %>
+  </ul>
+</div>
+<div class="col-right">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam quidem, veritatis quia eos aspernatur consectetur provident, recusandae iusto expedita et, nobis! Non rerum harum fuga eius nobis quaerat odit iusto.
+  </p>
+</div>
