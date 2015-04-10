@@ -1,15 +1,33 @@
-<h1>Edit Contact</h1>
+<div class="col-left">
 
-<form action="/contacts" method="post">
-  <input type="hidden" name="_method" value="put" />
-  <input type="hidden" name="id" value="<%= @contact.id %>" />
-  <label for="first_name">First Name:</label>
-  <input type="text" name="first_name" id="first_name" value="<%= @contact.first_name %>"><br>
-  <label for="last_name">Last Name:</label>
-  <input type="text" name="last_name" id="last_name" value="<%= @contact.last_name %>"><br>
-  <label for="email">Email:</label>
-  <input type="email" name="email" id="email" value="<%= @contact.email %>"><br>
-  <label for="notes">Any notes:</label>
-  <input type="text" name="notes" id="notes" value="<%= @contact.notes %>"><br>
-  <input type="submit" name="submit">
-</form>
+  <h1>Edit Contact</h1>
+
+  <form action="/contacts/<%= @contact.id %>" method="post">
+    <input type="hidden" name="_method" value="put" />
+    <input type="hidden" name="id" value="<%= @contact.id %>" />
+    <div class="field">
+      <label for="first_name">First Name:</label>
+      <input type="text" name="first_name" id="first_name" value="<%= @contact.first_name %>">
+    </div>
+    <div class="field">
+      <label for="last_name">Last Name:</label>
+      <input type="text" name="last_name" id="last_name" value="<%= @contact.last_name %>">
+    </div>
+    <div class="field">
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" value="<%= @contact.email %>">
+    </div>
+    <div class="field">
+      <label for="notes">Any notes:</label>
+      <input type="text" name="notes" id="notes" value="<%= @contact.notes %>">
+    </div>
+    <div class="field">
+      <button type="submit" class="btn btn-edit">Edit</button>
+    </div>
+  </form>
+
+</div>
+
+<div class="col-right">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas eius, quasi provident quam. Dolorem fugiat est enim veniam facilis error culpa veritatis maxime? Similique commodi labore tempore est, illo error!
+</div>

@@ -1,11 +1,12 @@
 require_relative 'contact'
 require_relative 'rolodex'
 require 'sinatra'
+require "sinatra/reloader" if development?
 
 $rolodex = Rolodex.new
 
 get '/' do
-  @crm_app_name = "Arthur's CRM"
+  @title = "ACRM"
   erb :index
 end
 
@@ -20,13 +21,21 @@ end
 get '/contacts/:id' do
   @id = params['id'].to_i
   @contact = $rolodex.find(@id)
-  erb :contact
+  if @contact
+    erb :contact
+  else
+    raise Sinatra::NotFound
+  end
 end
 
-get '/contacts/edit/:id' do
+get '/contacts/:id/edit' do
   @id = params['id'].to_i
   @contact = $rolodex.find(@id)
-  erb :edit
+  if @contact
+    erb :edit
+  else
+    raise Sinatra::NotFound
+  end
 end
 
 post '/contacts' do
@@ -35,19 +44,27 @@ post '/contacts' do
   redirect to('/contacts')
 end
 
-put '/contacts' do
+put '/contacts/:id' do
   @id = params['id'].to_i
   @contact = $rolodex.find(@id)
-  @contact.first_name = params[:first_name]
-  @contact.last_name = params[:last_name]
-  @contact.email = params[:email]
-  @contact.notes = params[:notes]
-  redirect to('/contacts')
+  if @contact
+    @contact.first_name = params[:first_name]
+    @contact.last_name = params[:last_name]
+    @contact.email = params[:email]
+    @contact.notes = params[:notes]
+    redirect to('/contacts')
+  else
+    raise Sinatra::NotFound
+  end
 end
 
-delete '/contacts' do
+delete '/contacts/:id' do
   @id = params['id'].to_i
   @contact = $rolodex.find(@id)
-  $rolodex.delete_contact(@contact)
-  redirect to('/contacts')
+  if @contact
+    $rolodex.delete_contact(@contact)
+    redirect to('/contacts')
+  else
+    raise Sinatra::NotFound
+  end
 end

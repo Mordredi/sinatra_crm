@@ -134,6 +134,7 @@ nav a:hover {
 /***************************
 MAIN
 ****************************/
+
 main h1 {
   font-size: 2.8vw;
   color: hsl(217, 98%, 26%);
@@ -157,6 +158,28 @@ main a:hover {
 }
 
 /***************************
+FORM
+****************************/
+
+.field {
+  margin-top: 1em;
+}
+
+input {
+  height: 1.6em;
+  width: 15em;
+  border-radius: 10px;
+  position: absolute;
+  left: 15em;
+  padding: 1px 5px;
+}
+
+input:focus {
+  outline: none;
+  border: solid 2px hsl(235, 100%, 77%);
+}
+
+/***************************
 FOOTER
 ****************************/
 
@@ -167,4 +190,59 @@ footer p, footer a {
 
 footer a:hover {
   color: hsl(0, 95%, 70%);
+}
+
+/***************************
+BUTTONS
+****************************/
+
+.btn {
+  height: 2em;
+  width: 10em;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 1px 1px 1px black;
+  text-shadow: 1px 1px 1px black
+}
+
+a.btn {
+  padding: 2px 10px;
+}
+
+a.btn:active, a.btn:visited {
+  color: #fff;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:active {
+  box-shadow: none;
+}
+
+.btn-del {
+  margin-top: 5px;
+  background-color: red;
+}
+
+.btn-del:hover, .btn-del:active {
+  background-color: hsl(0, 95%, 47%);
+}
+
+.btn-sub {
+  background-color: hsl(120, 100%, 50%);
+}
+
+.btn-sub:hover, .btn-sub:active {
+  background-color: hsl(120, 100%, 30%);
+}
+
+.btn-edit {
+  background-color: hsl(207, 100%, 50%);
+}
+
+.btn-edit:hover, .btn-edit:active {
+  background-color: hsl(207, 100%, 30%);
 }

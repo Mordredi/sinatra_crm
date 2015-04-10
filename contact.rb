@@ -11,7 +11,6 @@ class Contact
     @notes = notes
     # update_attributes(attrs)
   end
-
   # def sanitize(attrs)
   #   attrs.keep_if { |k,v| FIELDS.include? k.to_sym }
   # end

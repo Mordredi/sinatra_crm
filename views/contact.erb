@@ -4,6 +4,9 @@
   <p><%= @contact.notes %></p>
 </div>
 <div class="col-right">
-  <a href="/contacts/edit/<%= @contact.id %>">Edit Contact</a><br>
-  <a href="/contacts/edit/<%= @contact.id %>">Delete Contact</a><br>
+  <a href="/contacts/<%= @contact.id %>/edit" class="btn btn-edit">Edit Contact</a><br>
+  <form action="/contacts/<%= @contact.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit" class="btn btn-del">Delete Contact</button>
+  </form>
 </div>

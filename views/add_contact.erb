@@ -1,13 +1,13 @@
-<h1>Add New Contact</h1>
+<div class="col-left">
 
-<form action="/contacts" method="post">
-  <label for="first_name">First Name:</label>
-  <input type="text" name="first_name" id="first_name"><br>
-  <label for="last_name">Last Name:</label>
-  <input type="text" name="last_name" id="last_name"><br>
-  <label for="email">Email:</label>
-  <input type="email" name="email" id="email"><br>
-  <label for="notes">Any notes:</label>
-  <input type="text" name="notes" id="notes"><br>
-  <input type="submit" name="submit">
-</form>
+  <h1>Add New Contact</h1>
+
+  <form action="/contacts" method="post">
+    <%= erb :_form %>
+  </form>
+
+</div>
+
+<div class="col-right">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit debitis ducimus quae illo laborum eveniet in, corporis minima non dicta numquam provident eaque, quibusdam soluta. Repellendus, nemo, iusto. Et, beatae!
+</div>
