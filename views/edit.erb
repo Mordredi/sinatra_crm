@@ -2,7 +2,7 @@
 
   <h1>Edit Contact</h1>
 
-  <form action="/contacts/<%= @contact.id %>" method="post">
+  <form action="/contacts/<%= @contact.id %>" method="post" class="profile">
     <input type="hidden" name="_method" value="put" />
     <input type="hidden" name="id" value="<%= @contact.id %>" />
     <div class="field">
@@ -21,7 +21,7 @@
       <label for="notes">Any notes:</label>
       <input type="text" name="notes" id="notes" value="<%= @contact.notes %>">
     </div>
-    <div class="field">
+    <div class="field btn-field">
       <button type="submit" class="btn btn-edit">Edit</button>
     </div>
   </form>

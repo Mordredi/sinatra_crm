@@ -1,7 +1,8 @@
 <div class="col-left">
-  <h1><%= @contact.first_name %> <%= @contact.last_name %></h1>
-  <a href="mailto:#"><%= @contact.email %></a>
-  <p><%= @contact.notes %></p>
+    <img src="http://fillmurray.com/200/300" alt="Profile pic" class="profile-pic">
+    <h2><%= @contact.first_name %> <%= @contact.last_name %></h2>
+    <a href="mailto:#"><%= @contact.email %></a>
+    <p class="notes"><%= @contact.notes %></p>
 </div>
 <div class="col-right">
   <a href="/contacts/<%= @contact.id %>/edit" class="btn btn-edit">Edit Contact</a><br>
